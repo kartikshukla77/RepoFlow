@@ -1,4 +1,7 @@
 {
+  "engines" : {
+   "node" :"26.9.0"
+  },
   "dependencies": {
     "socket.io": "^4.8.3"
   }
