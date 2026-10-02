@@ -1,0 +1,222 @@
+.create-repository-page {
+  min-height: calc(100vh - 75px);
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 55px 20px 80px;
+  color: #29252b;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255, 193, 7, 0.10), transparent 28%),
+    radial-gradient(circle at 85% 15%, rgba(124, 58, 237, 0.10), transparent 30%),
+    radial-gradient(circle at 80% 80%, rgba(20, 184, 166, 0.09), transparent 30%),
+    #eef1f4;
+}
+
+.create-repository-card {
+  width: 100%;
+  max-width: 680px;
+  box-sizing: border-box;
+  padding: 38px 42px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(70, 55, 65, 0.12);
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(45, 35, 45, 0.10);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.create-repository-header {
+  margin-bottom: 30px;
+}
+
+.create-repository-label {
+  margin: 0 0 7px;
+  color: #63384f;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.create-repository-header h1 {
+  margin: 0 0 8px;
+  color: #29252b;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.create-repository-header > p:last-child {
+  margin: 0;
+  color: #706a72;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #29252b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-group label span {
+  color: #b42318;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(70, 55, 65, 0.20);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #29252b;
+  font-family: "Asap", sans-serif;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input {
+  height: 42px;
+  padding: 0 13px;
+}
+
+.form-group textarea {
+  min-height: 110px;
+  padding: 12px 13px;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #63384f;
+  box-shadow: 0 0 0 3px rgba(99, 56, 79, 0.10);
+}
+
+.visibility-section {
+  margin-top: 8px;
+  margin-bottom: 22px;
+}
+
+.visibility-section h3 {
+  margin: 0 0 12px;
+  color: #29252b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.visibility-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 13px 14px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(70, 55, 65, 0.12);
+  border-radius: 8px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.visibility-option input {
+  margin-top: 3px;
+  accent-color: #63384f;
+}
+
+.visibility-option strong {
+  display: block;
+  margin-bottom: 3px;
+  color: #29252b;
+  font-size: 14px;
+}
+
+.visibility-option p {
+  margin: 0;
+  color: #706a72;
+  font-size: 12px;
+}
+
+.repository-error {
+  margin: 0 0 18px;
+  color: #b42318;
+  font-size: 13px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.cancel-repository-btn,
+.create-repository-btn {
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 8px;
+  font-family: "Asap", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease;
+}
+
+.cancel-repository-btn {
+  border: 1px solid rgba(99, 56, 79, 0.25);
+  background: transparent;
+  color: #63384f;
+}
+
+.cancel-repository-btn:hover {
+  background: rgba(99, 56, 79, 0.08);
+}
+
+.create-repository-btn {
+  border: 1px solid #63384f;
+  background: #63384f;
+  color: white;
+}
+
+.create-repository-btn:hover {
+  background: #7a405f;
+  border-color: #7a405f;
+}
+
+.cancel-repository-btn:active,
+.create-repository-btn:active {
+  transform: translateY(1px);
+}
+
+.create-repository-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+@media screen and (max-width: 650px) {
+  .create-repository-page {
+    padding: 30px 15px 60px;
+  }
+
+  .create-repository-card {
+    padding: 30px 20px;
+  }
+
+  .create-repository-header h1 {
+    font-size: 24px;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .cancel-repository-btn,
+  .create-repository-btn {
+    width: 100%;
+  }
+}

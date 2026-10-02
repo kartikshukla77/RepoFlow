@@ -1,0 +1,39 @@
+.events-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.events-card li {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(70, 55, 65, 0.09);
+}
+
+.events-card li:last-child {
+  border-bottom: none;
+}
+
+.event-dot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  margin-top: 5px;
+  margin-right: 12px;
+  background: #7a405f;
+  border-radius: 50%;
+}
+
+.events-card strong {
+  display: block;
+  color: #63384f;
+  font-size: 13px;
+}
+
+.events-card p {
+  margin: 4px 0 0;
+  color: #706a72;
+  font-size: 12px;
+}

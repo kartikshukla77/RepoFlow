@@ -1,0 +1,282 @@
+/* repo.css */
+
+.repo-page {
+  width: 100%;
+  min-height: calc(100vh - 75px);
+  display: flex;
+  justify-content: center;
+  padding: 45px 20px 80px;
+  box-sizing: border-box;
+  color: #29252b;
+}
+
+.repo-card {
+  width: 100%;
+  max-width: 560px;
+  box-sizing: border-box;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid rgba(70, 55, 65, 0.12);
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(45, 35, 45, 0.10);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ---- Top: name + description + visibility ---- */
+
+.repo-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(70, 55, 65, 0.12);
+}
+
+.repo-label {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: #8a8189;
+}
+
+.repo-top h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 600;
+  color: #29252b;
+  word-break: break-word;
+}
+
+.repo-description {
+  margin: 0;
+  font-size: 14px;
+  font-style: italic;
+  color: #706a72;
+}
+
+.repo-visibility {
+  margin: 4px 0 0;
+  padding: 6px 14px;
+  border: 1px solid rgba(70, 55, 65, 0.2);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #63384f;
+  background: rgba(99, 56, 79, 0.06);
+}
+
+/* ---- Owner section ---- */
+
+.repo-details {
+  margin: 24px 0;
+}
+
+.detail-card {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(70, 55, 65, 0.12);
+  border-radius: 10px;
+}
+
+.detail-label {
+  margin: 0 0 12px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #8a8189;
+}
+
+.repo-owner {
+  display: flex;
+  align-items: center;
+}
+
+.repo-owner-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.repo-owner-avatar {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: rgba(99, 56, 79, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #63384f;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.repo-owner-info h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #29252b;
+}
+
+.view-profile-btn {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #63384f;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.view-profile-btn:hover {
+  text-decoration: underline;
+}
+
+/* ---- Owner actions (edit / delete) ---- */
+
+.repo-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.repo-actions button {
+  width: 100%;
+  padding: 11px 20px;
+  border-radius: 8px;
+  font-family: "Asap", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.repo-actions button:active {
+  transform: translateY(1px);
+}
+
+.repo-actions button:first-child {
+  border: 1px solid #63384f;
+  background: #63384f;
+  color: white;
+}
+
+.repo-actions button:first-child:hover {
+  background: #522c41;
+}
+
+.repo-actions button:last-child {
+  border: 1px solid #d32f2f;
+  background: transparent;
+  color: #d32f2f;
+}
+
+.repo-actions button:last-child:hover {
+  background: rgba(211, 47, 47, 0.08);
+}
+
+.repo-error {
+  margin: 0 0 20px;
+  padding: 12px 14px;
+  background: rgba(211, 47, 47, 0.08);
+  border: 1px solid rgba(211, 47, 47, 0.2);
+  border-radius: 8px;
+  color: #d32f2f;
+  font-size: 14px;
+}
+
+/* ---- Content / files section ---- */
+
+.content-card {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(70, 55, 65, 0.12);
+  border-radius: 10px;
+}
+
+.content-card .repo-label {
+  margin-bottom: 6px;
+}
+
+.content-card h2 {
+  margin: 0 0 14px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #29252b;
+}
+
+.content-card ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.content-card li {
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #29252b;
+}
+
+.no-content {
+  margin: 0;
+  font-size: 13px;
+  font-style: italic;
+  color: #8a8189;
+}
+
+/* ---- Edit page's own confirm actions (if reused) ---- */
+
+.edit-actions {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.edit-actions button {
+  width: 100%;
+  padding: 11px 20px;
+  border-radius: 8px;
+  font-family: "Asap", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.edit-actions button:first-child {
+  border: 1px solid rgba(70, 55, 65, 0.2);
+  background: transparent;
+  color: #706a72;
+}
+
+.edit-actions button:first-child:hover {
+  background: rgba(70, 55, 65, 0.06);
+}
+
+.edit-actions button:last-child {
+  border: 1px solid #63384f;
+  background: #63384f;
+  color: white;
+}
+
+.edit-actions button:last-child:hover {
+  background: #522c41;
+}
+
+@media screen and (max-width: 650px) {
+  .repo-page {
+    padding: 25px 15px 60px;
+  }
+
+  .repo-card {
+    padding: 26px 20px;
+  }
+}

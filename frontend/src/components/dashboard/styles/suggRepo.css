@@ -1,0 +1,53 @@
+.sidebar-heading input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.suggested-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.suggested-card {
+  display: flex;
+  align-items: center;
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(70, 55, 65, 0.09);
+}
+
+.suggested-card:last-child {
+  border-bottom: none;
+}
+
+.suggested-card > div:nth-child(2) {
+  flex: 1;
+  min-width: 0;
+  margin-left: 10px;
+}
+
+.suggested-card h4 {
+  margin: 0 0 4px;
+  color: #63384f;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.suggested-card p {
+  margin: 0;
+  color: #706a72;
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.suggested-card > span {
+  color: #7a405f;
+  font-size: 15px;
+}
+
+.suggested-star {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 19px;
+}
