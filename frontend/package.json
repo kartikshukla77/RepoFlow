@@ -1,6 +1,6 @@
 {
-  "engines" : {
-   "node" :"26.9.0"
+  "engines": {
+    "node": "26.9.0"
   },
   "name": "frontend",
   "private": true,
@@ -22,7 +22,6 @@
     "react-router-dom": "^7.18.4"
   },
   "devDependencies": {
-    "@rolldown/binding-win32-x64-msvc": "^1.2.9",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",
     "@vitejs/plugin-react": "^6.1.1",
