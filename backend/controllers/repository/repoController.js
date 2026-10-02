@@ -4,14 +4,12 @@ const User = require("../../models/userModel");
 
 async function createRepository(req, res) {
   const { owner, name, content, description, visibility } = req.body;
-
   try {
     if (!name) {
       return res.status(400).json({
         error: "Repository name is required!",
       });
     }
-
     if (!mongoose.Types.ObjectId.isValid(owner)) {
       return res.status(400).json({
         error: "Invalid User ID!",
@@ -121,7 +119,7 @@ async function fetchRepositoriesForCurrentUser(req, res) {
 
 async function updateRepositoryById(req, res) {
   const { id } = req.params;
-  const { userId, name, description, visibility } = req.body;
+  const { userId, name, description, visibility , content } = req.body;
 
   try {
     const repository = await Repository.findById(id);
@@ -138,6 +136,7 @@ async function updateRepositoryById(req, res) {
     repository.name = name;
     repository.description = description;
     repository.visibility = visibility;
+    repository.content = content;
 
     const updatedRepository = await repository.save();
 

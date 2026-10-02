@@ -1,13 +1,7 @@
 import React from "react";
 import "../styles/yourCard.css";
 
-const YourCard = ({
-  repo,
-  isStarred,
-  starLoading,
-  handleStarClick,
-  onClick,
-}) => {
+const YourCard = ({repo,isStarred,starLoading,handleStarClick,onClick,}) => {
   return (
     <div
       className="repository-card"

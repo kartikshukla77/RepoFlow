@@ -16,7 +16,6 @@ nav  a {
   text-decoration: none;
 
 }
-
 nav > a > div {
   display: flex;
   align-items: center;

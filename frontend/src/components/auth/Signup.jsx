@@ -1,13 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useAuth } from "../../authContext";
-
-import {
-  Button,
-  Heading,
-  PageHeader,
-  Stack,
-} from "@primer/react";
+import {Button,Heading,PageHeader,Stack,} from "@primer/react";
 
 import "./auth.css";
 

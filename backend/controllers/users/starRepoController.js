@@ -93,11 +93,7 @@ async function getStarredRepositories(req, res) {
 
     res.json(repositories);
   } catch (err) {
-    console.error(
-      "Error while fetching starred repositories:",
-      err.message
-    );
-
+    console.error("Error while fetching starred repositories:",err.message);
     res.status(500).send("Server error!");
   }
 }

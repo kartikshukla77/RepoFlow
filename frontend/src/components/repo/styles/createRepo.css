@@ -8,9 +8,21 @@
   padding: 55px 20px 80px;
   color: #29252b;
   background:
-    radial-gradient(circle at 10% 20%, rgba(255, 193, 7, 0.10), transparent 28%),
-    radial-gradient(circle at 85% 15%, rgba(124, 58, 237, 0.10), transparent 30%),
-    radial-gradient(circle at 80% 80%, rgba(20, 184, 166, 0.09), transparent 30%),
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(255, 193, 7, 0.10),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(124, 58, 237, 0.10),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(20, 184, 166, 0.09),
+      transparent 30%
+    ),
     #eef1f4;
 }
 
@@ -80,7 +92,9 @@
   font-family: "Asap", sans-serif;
   font-size: 14px;
   outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .form-group input {
@@ -97,7 +111,8 @@
 .form-group input:focus,
 .form-group textarea:focus {
   border-color: #63384f;
-  box-shadow: 0 0 0 3px rgba(99, 56, 79, 0.10);
+  box-shadow:
+    0 0 0 3px rgba(99, 56, 79, 0.10);
 }
 
 .visibility-section {
@@ -164,7 +179,10 @@
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.1s ease;
 }
 
 .cancel-repository-btn {
@@ -192,7 +210,6 @@
 .create-repository-btn:active {
   transform: translateY(1px);
 }
-
 .create-repository-btn:disabled {
   opacity: 0.65;
   cursor: not-allowed;
@@ -202,19 +219,15 @@
   .create-repository-page {
     padding: 30px 15px 60px;
   }
-
   .create-repository-card {
     padding: 30px 20px;
   }
-
   .create-repository-header h1 {
     font-size: 24px;
   }
-
   .form-actions {
     flex-direction: column-reverse;
   }
-
   .cancel-repository-btn,
   .create-repository-btn {
     width: 100%;

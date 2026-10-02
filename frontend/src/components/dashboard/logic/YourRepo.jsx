@@ -13,12 +13,7 @@ const YourRepo = () => {
 
   const [allSuggestedRepos, setAllSuggestedRepos] = useState([]);
 
-  const {
-    starredRepos,
-    starLoading,
-    isRepoStarred,
-    handleStarClick,
-  } = StarRepo(repos, allSuggestedRepos);
+  const {starredRepos,starLoading, isRepoStarred, handleStarClick,} = StarRepo(repos, allSuggestedRepos);
 
   useEffect(() => {
     const userId = localStorage.getItem("userId");

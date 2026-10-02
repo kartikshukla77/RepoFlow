@@ -9,6 +9,7 @@ const EditRepo = () => {
 
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+  const [content, setContent] = useState("");
   const [visibility, setVisibility] = useState(true);
 
   const [error, setError] = useState("");
@@ -47,6 +48,11 @@ const EditRepo = () => {
 
         setName(repository.name);
         setDescription(repository.description || "");
+        setContent(
+          Array.isArray(repository.content)
+            ? repository.content.join(", ")
+            : ""
+        );
         setVisibility(repository.visibility);
       } catch (err) {
         console.log("Error while fetching repository:", err);
@@ -70,6 +76,11 @@ const EditRepo = () => {
     }
 
     try {
+      const repositoryContent = content
+        .split(",")
+        .map((item) => item.trim())
+        .filter((item) => item !== "");
+
       const response = await fetch(
         `http://localhost:3000/repo/update/${id}`,
         {
@@ -82,6 +93,7 @@ const EditRepo = () => {
             name: name.trim(),
             description: description.trim(),
             visibility,
+            content: repositoryContent,
           }),
         }
       );
@@ -104,7 +116,6 @@ const EditRepo = () => {
     return (
       <>
         <Navbar />
-
         <div className="edit-repo-page">
           <div className="edit-repo-card">
             <p>Loading repository...</p>
@@ -117,17 +128,14 @@ const EditRepo = () => {
   return (
     <>
       <Navbar />
-
       <div className="edit-repo-page">
         <div className="edit-repo-card">
           <p className="repo-label">EDIT REPOSITORY</p>
-
           <h1>Edit Repository</h1>
 
           {error ? (
             <div>
               <p className="edit-error">{error}</p>
-
               <button
                 className="back-button"
                 onClick={() => navigate(`/repo/${id}`)}
@@ -141,7 +149,6 @@ const EditRepo = () => {
                 <label htmlFor="repo-name">
                   Repository name
                 </label>
-
                 <input
                   id="repo-name"
                   type="text"
@@ -154,7 +161,6 @@ const EditRepo = () => {
                 <label htmlFor="repo-description">
                   Description
                 </label>
-
                 <textarea
                   id="repo-description"
                   value={description}
@@ -162,9 +168,20 @@ const EditRepo = () => {
                 />
               </div>
 
+              <div className="edit-form-group">
+                <label htmlFor="repo-content">
+                  Technologies used
+                </label>
+                <textarea
+                  id="repo-content"
+                  value={content}
+                  placeholder="Example: React, Node.js, Express.js, MongoDB"
+                  onChange={(e) => setContent(e.target.value)}
+                />
+              </div>
+
               <div className="edit-visibility">
                 <h3>Visibility</h3>
-
                 <label>
                   <input
                     type="radio"
@@ -174,7 +191,6 @@ const EditRepo = () => {
                   />
                   Public
                 </label>
-
                 <label>
                   <input
                     type="radio"
@@ -193,7 +209,6 @@ const EditRepo = () => {
                 >
                   Cancel
                 </button>
-
                 <button type="submit">
                   Save Changes
                 </button>

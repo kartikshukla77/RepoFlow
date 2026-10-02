@@ -123,15 +123,11 @@ const Repo = () => {
         <div className="repo-card">
           <div className="repo-top">
             <div>
-              <p className="repo-label">
-                REPOSITORY
-              </p>
-
               <h1>{repository.name}</h1>
 
               <p className="repo-description">
-                {repository.description ||
-                  "No description available"}
+               <b> {repository.description ||
+                  "No description available"}</b> 
               </p>
             </div>
 
@@ -170,7 +166,7 @@ const Repo = () => {
                         )
                       }
                     >
-                      View Profile →
+                      View Profile 
                     </button>
                   </div>
                 </div>
@@ -203,11 +199,7 @@ const Repo = () => {
           )}
 
           <div className="content-card">
-            <p className="repo-label">
-              REPOSITORY CONTENT
-            </p>
-
-            <h2>Files</h2>
+            <h2>Technologies Used</h2>
 
             {repository.content &&
             repository.content.length > 0 ? (

@@ -8,6 +8,7 @@ const CreateRepo = () => {
 
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+  const [content, setContent] = useState("");
   const [visibility, setVisibility] = useState(true);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -32,24 +33,34 @@ const CreateRepo = () => {
     try {
       setLoading(true);
 
-      const response = await fetch("http://localhost:3000/repo/create", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          owner: userId,
-          name: name.trim(),
-          description: description.trim(),
-          visibility,
-          content: [],
-        }),
-      });
+      const repositoryContent = content
+        .split(",")
+        .map((item) => item.trim())
+        .filter((item) => item !== "");
+
+      const response = await fetch(
+        "http://localhost:3000/repo/create",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            owner: userId,
+            name: name.trim(),
+            description: description.trim(),
+            visibility,
+            content: repositoryContent,
+          }),
+        }
+      );
 
       const data = await response.json();
 
       if (!response.ok) {
-        setError(data.error || "Failed to create repository!");
+        setError(
+          data.error || "Failed to create repository!"
+        );
         return;
       }
 
@@ -57,8 +68,14 @@ const CreateRepo = () => {
 
       navigate("/");
     } catch (err) {
-      console.error("Error while creating repository:", err);
-      setError("Something went wrong. Please try again.");
+      console.error(
+        "Error while creating repository:",
+        err
+      );
+
+      setError(
+        "Something went wrong. Please try again."
+      );
     } finally {
       setLoading(false);
     }
@@ -71,11 +88,15 @@ const CreateRepo = () => {
       <div className="create-repository-page">
         <div className="create-repository-card">
           <div className="create-repository-header">
-            <p className="create-repository-label">NEW REPOSITORY</p>
+            <p className="create-repository-label">
+              NEW REPOSITORY
+            </p>
+
             <h1>Create a repository</h1>
+
             <p>
-              Create a new repository to start building and managing your
-              project.
+              Create a new repository to start building
+              and managing your project.
             </p>
           </div>
 
@@ -90,7 +111,9 @@ const CreateRepo = () => {
                 type="text"
                 value={name}
                 placeholder="my-awesome-project"
-                onChange={(e) => setName(e.target.value)}
+                onChange={(e) =>
+                  setName(e.target.value)
+                }
               />
             </div>
 
@@ -103,7 +126,24 @@ const CreateRepo = () => {
                 id="repository-description"
                 value={description}
                 placeholder="What is this repository about?"
-                onChange={(e) => setDescription(e.target.value)}
+                onChange={(e) =>
+                  setDescription(e.target.value)
+                }
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="repository-content">
+                Technologies used
+              </label>
+
+              <textarea
+                id="repository-content"
+                value={content}
+                placeholder="Example: React, Node.js, Express.js, MongoDB"
+                onChange={(e) =>
+                  setContent(e.target.value)
+                }
               />
             </div>
 
@@ -115,12 +155,17 @@ const CreateRepo = () => {
                   type="radio"
                   name="visibility"
                   checked={visibility === true}
-                  onChange={() => setVisibility(true)}
+                  onChange={() =>
+                    setVisibility(true)
+                  }
                 />
 
                 <div>
                   <strong>Public</strong>
-                  <p>Anyone can see this repository.</p>
+
+                  <p>
+                    Anyone can see this repository.
+                  </p>
                 </div>
               </label>
 
@@ -129,17 +174,26 @@ const CreateRepo = () => {
                   type="radio"
                   name="visibility"
                   checked={visibility === false}
-                  onChange={() => setVisibility(false)}
+                  onChange={() =>
+                    setVisibility(false)
+                  }
                 />
 
                 <div>
                   <strong>Private</strong>
-                  <p>Only you can see this repository.</p>
+
+                  <p>
+                    Only you can see this repository.
+                  </p>
                 </div>
               </label>
             </div>
 
-            {error && <p className="repository-error">{error}</p>}
+            {error && (
+              <p className="repository-error">
+                {error}
+              </p>
+            )}
 
             <div className="form-actions">
               <button
@@ -155,7 +209,9 @@ const CreateRepo = () => {
                 className="create-repository-btn"
                 disabled={loading}
               >
-                {loading ? "Creating..." : "Create repository"}
+                {loading
+                  ? "Creating..."
+                  : "Create repository"}
               </button>
             </div>
           </form>

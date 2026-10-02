@@ -12,16 +12,10 @@ const SuggRepo = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
-  const {
-    starredRepos,
-    starLoading,
-    isRepoStarred,
-    handleStarClick,
-  } = StarRepo([], allSuggestedRepos);
+  const {starredRepos, starLoading, isRepoStarred,handleStarClick,} = StarRepo([],allSuggestedRepos);
 
   useEffect(() => {
     const userId = localStorage.getItem("userId");
-
     const fetchRepos = async () => {
       try {
         const response = await fetch(
@@ -29,17 +23,13 @@ const SuggRepo = () => {
         );
 
         const data = await response.json();
-
         const allRepos = data || [];
 
         setAllSuggestedRepos(allRepos);
         setSuggestedRepos(allRepos.slice(0, 5));
         setSearchResults(allRepos.slice(0, 5));
       } catch (err) {
-        console.log(
-          "Error while fetching suggested repositories:",
-          err
-        );
+        console.log("Error while fetching suggested repositories:",err);
       }
     };
 
