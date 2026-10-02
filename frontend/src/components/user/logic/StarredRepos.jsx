@@ -28,7 +28,7 @@ const StarredRepos = () => {
 
       try {
         const response = await axios.get(
-          `http://localhost:3000/starred/${userId}`
+          `${import.meta.env.VITE_API_URL}/starred/${userId}`
         );
 
         setRepos(response.data);

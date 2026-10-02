@@ -53,7 +53,7 @@ const FollowInfo = ({
       setFollowError("");
 
       const response = await axios.post(
-        "http://localhost:3000/follow",
+       `${import.meta.env.VITE_API_URL}/follow`,
         {
           userId,
           targetUserId: targetId,
@@ -87,7 +87,7 @@ const FollowInfo = ({
       setFollowError("");
 
       const response = await axios.post(
-        "http://localhost:3000/unfollow",
+       `${import.meta.env.VITE_API_URL}/unfollow`,
         {
           userId,
           targetUserId: targetId,

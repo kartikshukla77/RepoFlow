@@ -10,7 +10,7 @@ const StarRepo = (repos, allSuggestedRepos) => {
     const fetchStarredRepos = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/starred/${userId}`
+          `${import.meta.env.VITE_API_URL}/starred/${userId}`
         );
 
         const data = await response.json();
@@ -41,7 +41,7 @@ const StarRepo = (repos, allSuggestedRepos) => {
         [repoId]: true,
       }));
 
-      const response = await fetch("http://localhost:3000/star", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/star`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -89,7 +89,7 @@ const StarRepo = (repos, allSuggestedRepos) => {
         [repoId]: true,
       }));
 
-      const response = await fetch("http://localhost:3000/unstar", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/unstar`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -28,7 +28,7 @@ const UserRepos = ({
 
       try {
         const response = await axios.get(
-          `http://localhost:3000/starred/${userId}`
+          `${import.meta.env.VITE_API_URL}/starred/${userId}`
         );
 
         setStarred(response.data);
@@ -51,7 +51,7 @@ const UserRepos = ({
       }));
 
       const response = await axios.post(
-        "http://localhost:3000/star",
+        `${import.meta.env.VITE_API_URL}/star`,
         {
           userId,
           repositoryId: repoId,
@@ -93,7 +93,7 @@ const UserRepos = ({
       }));
 
       const response = await axios.post(
-        "http://localhost:3000/unstar",
+        `${import.meta.env.VITE_API_URL}/unstar`,
         {
           userId,
           repositoryId: repoId,

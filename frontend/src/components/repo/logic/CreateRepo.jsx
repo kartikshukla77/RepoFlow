@@ -39,7 +39,7 @@ const CreateRepo = () => {
         .filter((item) => item !== "");
 
       const response = await fetch(
-        "http://localhost:3000/repo/create",
+        `${import.meta.env.VITE_API_URL}/repo/create`,
         {
           method: "POST",
           headers: {

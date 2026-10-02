@@ -13,12 +13,12 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const { setCurrentUser } = useAuth();
 
+    
   const handleLogin = async (e) => {
     e.preventDefault();
-
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:3000/login", {
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/login`, {
         email: email,
         password: password,
       });

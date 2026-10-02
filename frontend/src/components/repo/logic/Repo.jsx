@@ -16,7 +16,7 @@ const Repo = () => {
     const fetchRepository = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/repo/${id}`
+          `${import.meta.env.VITE_API_URL}/repo/${id}`
         );
 
         const data = await response.json();
@@ -67,7 +67,7 @@ const Repo = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/repo/delete/${id}`,
+        `${import.meta.env.VITE_API_URL}/repo/delete/${id}`,
         {
           method: "DELETE",
           headers: {

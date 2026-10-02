@@ -21,7 +21,7 @@ const EditRepo = () => {
     const fetchRepository = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/repo/${id}`
+          `${import.meta.env.VITE_API_URL}/repo/${id}`
         );
 
         const data = await response.json();
@@ -82,7 +82,7 @@ const EditRepo = () => {
         .filter((item) => item !== "");
 
       const response = await fetch(
-        `http://localhost:3000/repo/update/${id}`,
+        `${import.meta.env.VITE_API_URL}/repo/update/${id}`,
         {
           method: "PUT",
           headers: {

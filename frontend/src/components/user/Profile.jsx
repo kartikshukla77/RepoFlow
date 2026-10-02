@@ -48,7 +48,7 @@ const Profile = () => {
 
       try {
         const response = await axios.get(
-          `http://localhost:3000/userProfile/${profileUserId}`
+          `${import.meta.env.VITE_API_URL}/userProfile/${profileUserId}`
         );
 
         setUser(response.data);

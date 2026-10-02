@@ -19,7 +19,7 @@ const SuggRepo = () => {
     const fetchRepos = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/repo/all?userID=${userId}`
+          `${import.meta.env.VITE_API_URL}/repo/all?userID=${userId}`
         );
 
         const data = await response.json();
